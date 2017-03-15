@@ -1,0 +1,295 @@
+/*
+Description:    Cybermachina Table Booking App
+Version:        1.0
+Author:         Justyna Skalska
+Created:        February 2017
+*/
+
+/*===============================================================
+    1. BASE
+    2. MAP
+    3. CALENDAR
+    4. PEOPLE
+    5. HOURS
+    6. SUMMARY
+===============================================================*/
+
+/*===============================================================
+    1. BASE
+===============================================================*/
+
+body{
+    background: url('bg.png') no-repeat;
+    background-attachment: scroll;
+    background-position: top left; 
+    width:810px;
+    padding: 0px;
+    /* TEST */
+    padding-left: 500px;
+    
+}
+
+nav{
+    width: inherit;
+    background: white;
+    display: block;
+}
+
+nav ul{
+    text-align: center
+}
+
+nav ul li {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 10px;
+    display: inline-block; 
+    text-transform: uppercase;
+    font-size: 20p
+}
+
+#left{
+    float:left;
+}
+
+/*===============================================================
+    2. MAP
+===============================================================*/
+
+#map{
+    background: url('img/map.png') no-repeat top;
+    background-size: contain;
+    width: 560px;
+    height: 280px;
+    display: block;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+/*===============================================================
+    3. CALENDAR
+===============================================================*/
+
+#datepicker {
+    width: 216px;
+    height: auto;
+    margin: 0 auto 0;
+    background: white;
+    float:left;
+    font: 9pt Arial, sans-serif;
+    box-sizing: border-box;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+
+.ui-datepicker a {
+	text-decoration: none;
+}
+
+.ui-datepicker table {
+	width: 100%;
+}
+.ui-datepicker-header {
+	background: black;
+	color: #e0e0e0;
+	font-weight: bold;
+	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
+	-moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+	text-shadow: 1px -1px 0px #000;
+	filter: dropshadow(color=#000, offx=1, offy=-1);
+	line-height: 30px;
+	border-width: 1px 0 0 0;
+	border-style: solid;
+	border-color: #111;
+}
+.ui-datepicker-title {
+	text-align: center;
+}
+.ui-datepicker-prev, .ui-datepicker-next {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	text-align: center;
+	cursor: pointer;
+	background-image: url('img/arrow.png');
+	background-repeat: no-repeat;
+	line-height: 600%;
+	overflow: hidden;
+}
+.ui-datepicker-prev {
+	float: left;
+	background-position: center -30px;
+}
+.ui-datepicker-next {
+	float: right;
+	background-position: center 0px;
+}
+.ui-datepicker thead {
+	background-color: #f7f7f7;
+	background-image: -moz-linear-gradient(top,  #f7f7f7 0%, #f1f1f1 100%);
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#f1f1f1));
+	background-image: -webkit-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+	background-image: -o-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+	background-image: -ms-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+	background-image: linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
+	border-bottom: 1px solid #bbb;
+}
+.ui-datepicker th {
+	text-transform: uppercase;
+	font-size: 6pt;
+	padding: 5px 0;
+	color: #666666;
+	text-shadow: 1px 0px 0px #fff;
+	filter: dropshadow(color=#fff, offx=1, offy=0);
+}
+.ui-datepicker tbody td {
+	padding: 0;
+	border-right: 1px solid #bbb;
+}
+.ui-datepicker tbody td:last-child {
+	border-right: 0px;
+}
+.ui-datepicker tbody tr {
+	border-bottom: 1px solid #bbb;
+}
+.ui-datepicker tbody tr:last-child {
+	border-bottom: 0px;
+}
+.ui-datepicker td span, .ui-datepicker td a {
+	display: inline-block;
+	font-weight: bold;
+	text-align: center;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	color: #666666;
+	text-shadow: 1px 1px 0px #fff;
+	filter: dropshadow(color=#fff, offx=1, offy=1);
+}
+.ui-datepicker-calendar .ui-state-default {
+	background: #ededed;
+	background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#dedede));
+	background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);
+	background: linear-gradient(top,  #ededed 0%,#dedede 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
+	-webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	-moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+	box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+}
+.ui-datepicker-calendar .ui-state-hover {
+	background: #f7f7f7;
+}
+.ui-datepicker-calendar .ui-state-active {
+	background: #6eafbf;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	color: #e0e0e0;
+	text-shadow: 0px 1px 0px #4d7a85;
+	filter: dropshadow(color=#4d7a85, offx=0, offy=1);
+	border: 1px solid #55838f;
+	position: relative;
+	margin: -1px;
+}
+.ui-datepicker-unselectable .ui-state-default {
+	background: #f4f4f4;
+	color: #b4b3b3;
+}
+.ui-datepicker-calendar td:first-child .ui-state-active {
+	width: 29px;
+	margin-left: 0;
+}
+.ui-datepicker-calendar td:last-child .ui-state-active {
+	width: 29px;
+	margin-right: 0;
+}
+.ui-datepicker-calendar tr:last-child .ui-state-active {
+	height: 29px;
+	margin-bottom: 0;
+}
+/*===============================================================
+    4. NUMBER OF PEOPLE
+===============================================================*/
+
+#people{
+    float: left;
+    margin-left: 20px;
+    background-color: crimson;
+    width: 260px;
+    height: 250px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+
+/*===============================================================
+    5. HOURS
+===============================================================*/
+
+.date{
+    width: 136px;
+    height: 22px;
+    display: block;
+    text-align: center;
+    padding: 7px;
+    border-bottom: 1px solid black;
+}
+
+#hours{
+    float: left;
+    margin-left: 20px;
+    background-color: aqua;
+    width: 150px;
+    height: 770px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
+
+#hours ul{
+    width: 150px;
+    text-align: center;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+}
+
+#hours ul li{
+    height: 28px;
+    line-height: 28px;
+    display: block;
+    font-size: 15px;
+    border-bottom: 1px solid black;
+}
+    
+#hours ul li a{
+    display: block;
+    text-decoration: none;
+    color: #000;
+}
+
+#hours ul li a:hover{
+    color: black;
+    background: blue;
+}
+
+/*===============================================================
+    6. SUMMARY
+===============================================================*/
+
+#summary{
+    clear: both;
+    margin-top: 290px;
+    background-color: darkblue;
+    width: 550px;
+    height: 200px;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+}
