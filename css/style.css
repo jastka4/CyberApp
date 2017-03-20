@@ -19,33 +19,49 @@ Created:        February 2017
 ===============================================================*/
 
 body{
-    background: url('bg.png') no-repeat;
-    background-attachment: scroll;
-    background-position: top left; 
     width:810px;
+    border: 1px solid black;
     padding: 0px;
-    /* TEST */
-    padding-left: 500px;
-    
+    background: url('../img/bg.png') left top repeat,
+                url('../img/ship.png') 100px 100px no-repeat,
+                url('../img/rocket.png') 400px 500px no-repeat,
+                url('../img/center.png')  399px center no-repeat;
+    background-attachment: scroll;
+    /* TEST
+    padding-left: 500px;*/
+
 }
 
 nav{
+    height: 40px;
     width: inherit;
+    margin-top: -17px;
     background: white;
     display: block;
 }
 
 nav ul{
-    text-align: center
+    text-align: left;
+    padding-left: 80px;
+}
+
+nav ul i {
+    border: solid grey;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    margin: 0 0 1px 4px;
+        transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
 }
 
 nav ul li {
-    height: 40px;
     line-height: 40px;
     padding: 0 10px;
-    display: inline-block; 
+    display: inline-block;
     text-transform: uppercase;
-    font-size: 20p
+    font-size: 14px;
+    font-weight: bold;
 }
 
 #left{
@@ -57,7 +73,7 @@ nav ul li {
 ===============================================================*/
 
 #map{
-    background: url('img/map.png') no-repeat top;
+    background: url('../img/map.png') no-repeat top;
     background-size: contain;
     width: 560px;
     height: 280px;
@@ -220,7 +236,7 @@ nav ul li {
 #people{
     float: left;
     margin-left: 20px;
-    background-color: crimson;
+    background-color: transparent;
     width: 260px;
     height: 250px;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
@@ -267,7 +283,7 @@ nav ul li {
     font-size: 15px;
     border-bottom: 1px solid black;
 }
-    
+
 #hours ul li a{
     display: block;
     text-decoration: none;
