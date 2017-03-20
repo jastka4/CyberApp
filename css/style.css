@@ -20,6 +20,7 @@ Created:        February 2017
 
 body{
     width:810px;
+    height: 810px;
     border: 1px solid black;
     padding: 0px;
     background: url('../img/bg.png') left top repeat,
@@ -27,37 +28,45 @@ body{
                 url('../img/rocket.png') 400px 500px no-repeat,
                 url('../img/center.png')  399px center no-repeat;
     background-attachment: scroll;
+    font-size: 15px;
     /* TEST
     padding-left: 500px;*/
 
 }
 
 nav{
-    height: 40px;
+    height: 35px;
     width: inherit;
     margin-top: -17px;
     background: white;
     display: block;
+    border-bottom: 3px solid black;
 }
 
 nav ul{
     text-align: left;
-    padding-left: 80px;
+    padding-left: 100px;
+}
+
+nav b {
+    font-weight: normal;
+    color: #FF0000;
 }
 
 nav ul i {
     border: solid grey;
-    border-width: 0 1px 1px 0;
+    border-width: 0 2px 2px 0;
     display: inline-block;
-    padding: 3px;
-    margin: 0 0 1px 4px;
+    padding: 2px;
+    margin: 0 0 2px 4px;
         transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
 }
 
 nav ul li {
     line-height: 40px;
-    padding: 0 10px;
+    padding: 0 3px;
     display: inline-block;
     text-transform: uppercase;
     font-size: 14px;
@@ -66,6 +75,7 @@ nav ul li {
 
 #left{
     float:left;
+    margin-left: 35px;
 }
 
 /*===============================================================
@@ -80,6 +90,7 @@ nav ul li {
     display: block;
     position: relative;
     margin-bottom: 20px;
+    
 }
 
 /*===============================================================
@@ -89,7 +100,7 @@ nav ul li {
 #datepicker {
     width: 216px;
     height: auto;
-    margin: 0 auto 0;
+    margin: 20px 23px 0;
     background: white;
     float:left;
     font: 9pt Arial, sans-serif;
@@ -97,6 +108,7 @@ nav ul li {
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    transform: scale(1.1);
 }
 
 .ui-datepicker a {
@@ -129,7 +141,7 @@ nav ul li {
 	height: 30px;
 	text-align: center;
 	cursor: pointer;
-	background-image: url('img/arrow.png');
+	background-image: url('../img/arrow.png');
 	background-repeat: no-repeat;
 	line-height: 600%;
 	overflow: hidden;
@@ -235,10 +247,12 @@ nav ul li {
 
 #people{
     float: left;
-    margin-left: 20px;
-    background-color: transparent;
-    width: 260px;
-    height: 250px;
+    margin: 10px 0 0 20px;
+    padding: 30px 20px 20px 20px;
+    background-color: #FFFFFF;
+    width: 220px;
+    height: 175px;
+    text-align: center;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
@@ -250,19 +264,19 @@ nav ul li {
 
 .date{
     width: 136px;
-    height: 22px;
+    height: 21px;
     display: block;
     text-align: center;
     padding: 7px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #CACCCE;
 }
 
 #hours{
     float: left;
-    margin-left: 20px;
-    background-color: aqua;
+    margin: 9px 0 0 20px;
+    background-color: #FFFFFF;
     width: 150px;
-    height: 770px;
+    height: auto;
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
@@ -277,11 +291,9 @@ nav ul li {
 }
 
 #hours ul li{
-    height: 28px;
-    line-height: 28px;
+    line-height: 27px;
     display: block;
-    font-size: 15px;
-    border-bottom: 1px solid black;
+    border-bottom: 2px solid #CACCCE;
 }
 
 #hours ul li a{
@@ -291,8 +303,9 @@ nav ul li {
 }
 
 #hours ul li a:hover{
-    color: black;
-    background: blue;
+    color: #FFFFFF;
+    background: #4B5FCC;
+    border-bottom: #4B5FCC;
 }
 
 /*===============================================================
