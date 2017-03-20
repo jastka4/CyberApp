@@ -4,17 +4,15 @@
     <meta charset="utf-8">
     <meta name="keywords" content="css, odcinek" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-		
+
     <title>Rezerwacja Cybermachina!</title>
 
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="../sda/css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
 
     <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
     <script src="js/jquery-ui.min.js"></script>
 
-</head>
-<body>
     <script type="text/javascript">
     $(function(){
         $('#datepicker').datepicker({
@@ -27,21 +25,51 @@
             monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień']
             });
         });
+    </script>
+
+</head>
+<body>
+  <script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1775355889449739',
+      xfbml      : true,
+      version    : 'v2.8'
+    });
+
+    // ADD ADDITIONAL FACEBOOK CODE HERE
+  };
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
 </script>
 
     <nav>
         <ul>
-            <li>Data</li>
-            <li>Liczba osób</li>
-            <li>Stolik</li>
-            <li>Godziny rezerwacji</li>
-            <li>Potwierdzenie</li>
+            <li><b>&#10004 </b>Data<i></i></li>
+            <li><b>&#10004 </b>Liczba osób<i></i></li>
+            <li><b>&#10004 </b>Stolik<i></i></li>
+            <li><b>&#10004 </b>Godziny rezerwacji<i></i></li>
+            <li><b>&#10004 </b>Potwierdzenie</li>
         </ul>
     </nav>
     <div id= "left">
         <div id= "map"></div>
         <div id= "datepicker"></div>
-        <div id= "people"></div>
+        <div id= "people">
+            <form>
+                Podaj liczbę osób:
+                <br><br>
+                <input type="number" name="numP" min=2 max=18>
+            </form>
+            <br><br>
+            Jeśli chcesz zrobić rezerwację na ponad 15 osób skontaktuj się z nami telefonicznie lub poprzez e-mail.
+        </div>
         <div id= "summary"></div>
     </div>
         <div id= "hours">
