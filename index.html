@@ -10,44 +10,34 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/normalize.css" />
 
-    <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
-    <script src="js/jquery-ui.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-    <script type="text/javascript">
-    $(function(){
-        $('#datepicker').datepicker({
-            dateFormat: 'dd-mm-yy',
-            minDate: 0,
-            maxDate: '+2m',
-            showOtherMonths: true,
-            firstDay: 1,
-            dayNamesMin: ['Nd', 'Pn', 'Wt', 'Śr', 'Cz', 'Pt', 'Sb'],
-            monthNames: ['Styczeń', 'Luty', 'Marzec', 'Kwiecień', 'Maj', 'Czerwiec', 'Lipiec', 'Sierpień', 'Wrzesień', 'Październik', 'Listopad', 'Grudzień']
-            });
-        });
-    </script>
+    <script src="js/main.js"></script>
+
 
 </head>
 <body>
-  <script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1775355889449739',
-      xfbml      : true,
-      version    : 'v2.8'
-    });
+    <script>
+      window.fbAsyncInit = function() {
+        FB.init({
+          appId      : '1775355889449739',
+          xfbml      : true,
+          version    : 'v2.8'
+        });
 
-    // ADD ADDITIONAL FACEBOOK CODE HERE
-  };
+        // ADD ADDITIONAL FACEBOOK CODE HERE
+      };
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
+      (function(d, s, id){
+         var js, fjs = d.getElementsByTagName(s)[0];
+         if (d.getElementById(id)) {return;}
+         js = d.createElement(s); js.id = id;
+         js.src = "//connect.facebook.net/en_US/sdk.js";
+         fjs.parentNode.insertBefore(js, fjs);
+       }(document, 'script', 'facebook-jssdk'));
+        
+    </script>
 
     <nav>
         <ul>
@@ -68,12 +58,34 @@
                 <input type="number" name="numP" min=2 max=18>
             </form>
             <br><br>
-            Jeśli chcesz zrobić rezerwację na ponad 15 osób skontaktuj się z nami telefonicznie lub poprzez e-mail.
+            Jeśli chcesz zrobić rezerwację na ponad 18 osób skontaktuj się z nami telefonicznie lub poprzez e-mail.
         </div>
-        <div id= "summary"></div>
+        <form method="post" action="" id= "summary">
+            <dl>
+                <dt>Liczba osób:</dt>
+                <dd class = sum1></dd>
+                <dt>Numer stolika:</dt>
+                <dd class = sum2></dd>
+                <dt>Godzina:</dt>
+                <dd class = sum3></dd>
+                <dt>Data:</dt>
+                <dd class = sum4></dd>
+            </dl>
+            <dl>
+                <dt>Imię:</dt>
+                <dd class = sum5>Justyna</dd>
+                <dt>Naziwsko:</dt>
+                <dd class = sum6>Skalska</dd>
+                <dt>E-mail:</dt>
+                <dd class = sum7><input type="email" name="email" id="email" /></dd>
+                <dt>Numer telefonu:</dt>
+                <dd class = sum8><input type="phone" name="phone" id="phone" /></dd>
+            </dl>
+        </form>
+        
     </div>
         <div id= "hours">
-            <span class= 'date'>dsadasd</span>
+            <span class= 'date'></span>
             <ul>
                 <li class='hour-1200'><a href='#'>12:00</a></li>
                 <li class='hour-1230'><a href='#'>12:30</a></li>
