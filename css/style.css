@@ -20,15 +20,15 @@ Created:        February 2017
 
 body{
     width:810px;
-    height: 810px;
-    border: 1px solid black;
+    height: auto;
     padding: 0px;
     background: url('../img/bg.png') left top repeat,
                 url('../img/ship.png') 100px 100px no-repeat,
-                url('../img/rocket.png') 400px 500px no-repeat,
+                url('../img/rocket.png') 453px 472px no-repeat,
                 url('../img/center.png')  399px center no-repeat;
     background-attachment: scroll;
-    font-size: 15px;
+    font-size: 14px;
+    color: #241E20;
     /* TEST
     padding-left: 500px;*/
 
@@ -38,9 +38,9 @@ nav{
     height: 35px;
     width: inherit;
     margin-top: -17px;
-    background: white;
+    background: #FFFFFF;
     display: block;
-    border-bottom: 3px solid black;
+    border-bottom: 3px solid #CACCCE;
 }
 
 nav ul{
@@ -50,11 +50,11 @@ nav ul{
 
 nav b {
     font-weight: normal;
-    color: #FF0000;
+    color: #FFFFFF;
 }
 
 nav ul i {
-    border: solid grey;
+    border: solid #CACCCE;
     border-width: 0 2px 2px 0;
     display: inline-block;
     padding: 2px;
@@ -78,6 +78,11 @@ nav ul li {
     margin-left: 35px;
 }
 
+#datepicker, #hours, #people, #summary {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+}
 /*===============================================================
     2. MAP
 ===============================================================*/
@@ -89,7 +94,7 @@ nav ul li {
     height: 280px;
     display: block;
     position: relative;
-    margin-bottom: 20px;
+    margin: 0;
     
 }
 
@@ -100,14 +105,11 @@ nav ul li {
 #datepicker {
     width: 216px;
     height: auto;
-    margin: 20px 23px 0;
+    margin: 20px 23px 0 27px;
     background: white;
     float:left;
     font: 9pt Arial, sans-serif;
     box-sizing: border-box;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
     transform: scale(1.1);
 }
 
@@ -119,7 +121,7 @@ nav ul li {
 	width: 100%;
 }
 .ui-datepicker-header {
-	background: black;
+	background: #241E20;
 	color: #e0e0e0;
 	font-weight: bold;
 	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
@@ -169,7 +171,7 @@ nav ul li {
 	text-transform: uppercase;
 	font-size: 6pt;
 	padding: 5px 0;
-	color: #666666;
+	color: #241E20;
 	text-shadow: 1px 0px 0px #fff;
 	filter: dropshadow(color=#fff, offx=1, offy=0);
 }
@@ -193,19 +195,12 @@ nav ul li {
 	width: 30px;
 	height: 30px;
 	line-height: 30px;
-	color: #666666;
+	color: #241E20;
 	text-shadow: 1px 1px 0px #fff;
 	filter: dropshadow(color=#fff, offx=1, offy=1);
 }
 .ui-datepicker-calendar .ui-state-default {
 	background: #ededed;
-	background: -moz-linear-gradient(top,  #ededed 0%, #dedede 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ededed), color-stop(100%,#dedede));
-	background: -webkit-linear-gradient(top,  #ededed 0%,#dedede 100%);
-	background: -o-linear-gradient(top,  #ededed 0%,#dedede 100%);
-	background: -ms-linear-gradient(top,  #ededed 0%,#dedede 100%);
-	background: linear-gradient(top,  #ededed 0%,#dedede 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ededed', endColorstr='#dedede',GradientType=0 );
 	-webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
 	-moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
 	box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
@@ -214,14 +209,14 @@ nav ul li {
 	background: #f7f7f7;
 }
 .ui-datepicker-calendar .ui-state-active {
-	background: #6eafbf;
+	background: #5ecd4a;
 	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
 	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
 	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
 	color: #e0e0e0;
-	text-shadow: 0px 1px 0px #4d7a85;
-	filter: dropshadow(color=#4d7a85, offx=0, offy=1);
-	border: 1px solid #55838f;
+	text-shadow: 0px 1px 0px #939495;
+	filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
+	border: 1px solid #241E20;
 	position: relative;
 	margin: -1px;
 }
@@ -249,13 +244,10 @@ nav ul li {
     float: left;
     margin: 10px 0 0 20px;
     padding: 30px 20px 20px 20px;
-    background-color: #FFFFFF;
+    background: #FFFFFF;
     width: 220px;
     height: 175px;
     text-align: center;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
 }
 
 /*===============================================================
@@ -267,7 +259,8 @@ nav ul li {
     height: 21px;
     display: block;
     text-align: center;
-    padding: 7px;
+    font-weight: bold;
+    padding: 10px 7px 4px 7px;
     border-bottom: 2px solid #CACCCE;
 }
 
@@ -277,9 +270,6 @@ nav ul li {
     background-color: #FFFFFF;
     width: 150px;
     height: auto;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
 }
 
 #hours ul{
@@ -291,7 +281,7 @@ nav ul li {
 }
 
 #hours ul li{
-    line-height: 27px;
+    line-height: 25px;
     display: block;
     border-bottom: 2px solid #CACCCE;
 }
@@ -304,8 +294,13 @@ nav ul li {
 
 #hours ul li a:hover{
     color: #FFFFFF;
-    background: #4B5FCC;
-    border-bottom: #4B5FCC;
+    background: #5ecd4a;
+	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    border-bottom: black;
+	text-shadow: 0px 1px 0px #939495;
+	filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
 }
 
 /*===============================================================
@@ -313,12 +308,43 @@ nav ul li {
 ===============================================================*/
 
 #summary{
+    font-size: 13px;
     clear: both;
-    margin-top: 290px;
-    background-color: darkblue;
-    width: 550px;
-    height: 200px;
-    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
-    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+    margin-top: 255px;
+    margin-left: 16px;
+    background: #FFFFFF;
+    width: 530px;
+    height: 184px;
+}
+
+
+#summary dl {
+    margin-top: -2px;
+    padding: 10px;
+    width: 245px;
+    height: 166px;
+    float:left;
+}
+
+#summary dt, dd {
+    margin: 0px;
+    height: 14px;
+    padding: 3px;
+}
+
+#summary dd {
+    font-weight: bold;
+    font-size: 14px;
+    margin-left: 0;
+    padding-bottom: 5px;
+}
+
+#summary dd:last-child {
+    border-bottom: 0px;
+}
+
+#summary input {
+    height: 11px;
+    font-size: 12px;
+    padding: 1px;
 }
