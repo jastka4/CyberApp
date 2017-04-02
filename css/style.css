@@ -50,7 +50,7 @@ nav ul{
 
 nav b {
     font-weight: normal;
-    color: #FFFFFF;
+    color: #CD4A5E;
 }
 
 nav ul i {
@@ -78,10 +78,19 @@ nav ul li {
     margin-left: 35px;
 }
 
-#datepicker, #hours, #people, #summary {
+#datepicker,
+#hours,
+#people,
+#summary {
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+}
+
+.disabled{
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    pointer-events: none;
 }
 /*===============================================================
     2. MAP
@@ -256,12 +265,12 @@ nav ul li {
 
 .date{
     width: 136px;
-    height: 21px;
+    height: 26px;
     display: block;
     text-align: center;
     font-weight: bold;
-    padding: 10px 7px 4px 7px;
-    border-bottom: 2px solid #CACCCE;
+    padding: 5px 7px 9px 7px;
+    border-bottom: 1px solid #CACCCE;
 }
 
 #hours{
@@ -283,7 +292,8 @@ nav ul li {
 #hours ul li{
     line-height: 25px;
     display: block;
-    border-bottom: 2px solid #CACCCE;
+    border-top: 1px solid #CACCCE;
+    border-bottom: 1px solid #CACCCE
 }
 
 #hours ul li a{
@@ -292,13 +302,15 @@ nav ul li {
     color: #000;
 }
 
-#hours ul li a:hover{
+#hours ul li:hover{
+    display: block;
     color: #FFFFFF;
-    background: #5ecd4a;
+    background: #5ECD4A;
 	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
 	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
 	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-    border-bottom: black;
+    border-bottom: 1px solid #5ECD4A;
+    border-top: 1px solid #5ECD4A;
 	text-shadow: 0px 1px 0px #939495;
 	filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
 }
@@ -310,7 +322,7 @@ nav ul li {
 #summary{
     font-size: 13px;
     clear: both;
-    margin-top: 255px;
+    margin-top: 260px;
     margin-left: 16px;
     background: #FFFFFF;
     width: 530px;
@@ -343,8 +355,28 @@ nav ul li {
     border-bottom: 0px;
 }
 
-#summary input {
+#summary input[type=email],
+#summary input[type=phone]{
     height: 11px;
     font-size: 12px;
     padding: 1px;
+}
+
+#summary input[type=submit]{
+    position: absolute;
+    top: 723px;
+    left: 343px;
+    width: 120px;
+    height: 25px;
+    border: 1px solid #CACCCE;
+    background: #5ECD4A;
+    color: #241E20;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
+
+}
+
+#summary input[type=submit]:hover{
+    font-weight:  bold;
 }
