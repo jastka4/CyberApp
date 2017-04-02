@@ -18,7 +18,7 @@ CALENDAR
             var selected = $(this).val();
             $(".date, .sum4").html(showDayName(selected));
             $('#people').removeClass('disabled');
-            reservation[1] = selected.parseDate('dd-mm-yy');
+            reservation[1] = selected; //change it to get day, month, year
         }
     });
 /*===============================================================
@@ -34,7 +34,6 @@ CONVERSION TO DAY AND MONTH
         var changedDate = dayName[date.getDay()] + ",<br />" +  date.getDate() + " " + monthName[date.getMonth()];
         return changedDate;
     }
-    
     $(".date").html(showDayName(today));
     
 /*===============================================================
@@ -47,6 +46,6 @@ NUMBER OF PEOPLE
             reservation[3] = numPeople;
             $('#map').removeClass('disabled');
         }
-        });
+    });
 
 });//end of the ready function
