@@ -55,7 +55,7 @@
             <form>
                 Podaj liczbę osób:
                 <br><br>
-                <input type="number" name="numP" min=2 max=18>
+                <input type="number" id="numP" min=2 max=18>
             </form>
             <br><br>
             Jeśli chcesz zrobić rezerwację na ponad 18 osób skontaktuj się z nami telefonicznie lub poprzez e-mail.
@@ -73,16 +73,14 @@
             </dl>
             <dl>
                 <dt>Imię:</dt>
-                <dd class = sum5>Justyna</dd>
-                <dt>Naziwsko:</dt>
-                <dd class = sum6>Skalska</dd>
+                <dd class = sum5>Justyna Skalska</dd>
                 <dt>E-mail:</dt>
-                <dd class = sum7><input type="email" name="email" id="email" /></dd>
+                <dd class = sum6><input type="email" name="email" id="email" /></dd>
                 <dt>Numer telefonu:</dt>
-                <dd class = sum8><input type="phone" name="phone" id="phone" /></dd>
+                <dd class = sum7><input type="phone" name="phone" id="phone" /></dd>
             </dl>
+            <input type="submit" id="reservation" value="Rezerwuję!" />
         </form>
-        
     </div>
         <div id= "hours">
             <span class= 'date'></span>
