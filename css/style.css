@@ -9,7 +9,7 @@ Created:        February 2017
     1. BASE
     2. MAP
     3. CALENDAR
-    4. PEOPLE
+    4. NUMBER OF PEOPLE
     5. HOURS
     6. SUMMARY
 ===============================================================*/
@@ -107,6 +107,120 @@ nav ul li {
     
 }
 
+#map li{
+    position: absolute;
+    display: block;
+}
+
+#map li.shape1{
+    height: 26px;
+    width: 26.5px;
+}
+
+#map li.shape2{
+    height: 26px;
+    width: 33px;
+}
+
+#map li.shape3{
+    height: 36px;
+    width: 48px;
+}
+
+#map li.shape4{
+    height: 30px;
+    width: 28px;
+}
+
+#map li.shape5{
+    height: 46px;
+    width: 29px;
+}
+
+#map li.shape6{
+    height: 40px;
+    width: 48px;
+}
+
+#map li#table1{
+    left: 500.5px;
+    top: 146.5px;
+}
+
+#map li#table2{
+    left: 500.5px;
+    top: 192px;
+}
+
+#map li#table3{
+    left: 432px;
+    top: 221px;
+}
+
+#map li#table4{
+    left: 432px;
+    top: 146px;
+}
+
+#map li#table5{
+    left: 248.5px;
+    top: 236.5px;
+}
+
+#map li#table6{
+    left: 250px;
+    top: 175.5px;
+}
+
+#map li#table7{
+    left: 207.5px;
+    top: 236.5px;
+}
+
+#map li#table8{
+    left: 218px;
+    top: 175.5px;
+}
+
+#map li#table9{
+    left: 166.5px;
+    top: 236.5px;
+}
+
+#map li#table10{
+    left: 185.5px;
+    top: 175.5px;
+}
+
+#map li#table11{
+    left: 92px;
+    top: 223px;
+}
+
+#map li#table12{
+    left: 92px;
+    top: 145px;
+}
+
+#map li#table13{
+    left: 33px;
+    top: 216.5px;
+}
+
+#map li#table14{
+    left: 33px;
+    top: 145px;
+}
+
+.reserved{
+    background: black;
+    pointer-events: none;
+}
+
+.free{
+    background: #5ECD4A;
+    cursor: pointer;
+}
 /*===============================================================
     3. CALENDAR
 ===============================================================*/
@@ -364,7 +478,7 @@ nav ul li {
 
 #summary input[type=submit]{
     position: absolute;
-    top: 723px;
+    top: 733px;
     left: 343px;
     width: 120px;
     height: 25px;
