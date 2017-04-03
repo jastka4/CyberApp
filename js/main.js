@@ -7,7 +7,6 @@ $(function(){
 CALENDAR
 ===============================================================*/
     $('#datepicker').datepicker({
-        dateFormat: 'mm-dd-yy',
         minDate: 0,
         maxDate: '+2m',
         showOtherMonths: true,
@@ -17,7 +16,7 @@ CALENDAR
         onSelect: function() {
             var selected = $(this).val();
             $(".date, .sum4").html(showDayName(selected));
-            $('#people').removeClass('disabled');
+            $('#people').animate({'opacity' : 1}).removeClass('disabled');
             reservation[1] = selected; //change it to get day, month, year
         }
     });
@@ -42,10 +41,15 @@ NUMBER OF PEOPLE
     $("#numP").on('input', function(){
         var numPeople = document.getElementById("numP").value;
         if(numPeople >= 2 && numPeople <= 18){
-            $(".sum1").html(numPeople);
-            reservation[3] = numPeople;
-            $('#map').removeClass('disabled');
+            reservation[3] = parseInt(numPeople);
+            $(".sum1").html(reservation[3]);
+            $('#map').animate({'opacity' : 1}).removeClass('disabled');
         }
     });
 
+/*===============================================================
+TABLES
+===============================================================*/
+
+    
 });//end of the ready function
