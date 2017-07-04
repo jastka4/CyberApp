@@ -1,0 +1,6 @@
+*.txt
+
+#Ignore images
+*.psd
+*.png
+*.jpg

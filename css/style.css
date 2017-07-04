@@ -5,6 +5,7 @@ Author:         Justyna Skalska
 Created:        February 2017
 */
 
+
 /*===============================================================
     1. BASE
     2. MAP
@@ -14,27 +15,24 @@ Created:        February 2017
     6. SUMMARY
 ===============================================================*/
 
+
 /*===============================================================
     1. BASE
 ===============================================================*/
 
-body{
-    width:810px;
+body {
+    width: 810px;
     height: auto;
     padding: 0px;
-    background: url('../img/bg.png') left top repeat,
-                url('../img/ship.png') 100px 100px no-repeat,
-                url('../img/rocket.png') 453px 472px no-repeat,
-                url('../img/center.png')  399px center no-repeat;
+    background: url('../img/bg.png') left top repeat, url('../img/ship.png') 100px 100px no-repeat, url('../img/rocket.png') 453px 472px no-repeat, url('../img/center.png') 399px center no-repeat;
     background-attachment: scroll;
     font-size: 14px;
     color: #241E20;
     /* TEST
     padding-left: 500px;*/
-
 }
 
-nav{
+nav {
     height: 35px;
     width: inherit;
     margin-top: -17px;
@@ -43,7 +41,7 @@ nav{
     border-bottom: 3px solid #CACCCE;
 }
 
-nav ul{
+nav ul {
     text-align: left;
     padding-left: 100px;
 }
@@ -59,7 +57,7 @@ nav ul i {
     display: inline-block;
     padding: 2px;
     margin: 0 0 2px 4px;
-        transform: rotate(-45deg);
+    transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
     -moz-transform: rotate(-45deg);
 }
@@ -73,8 +71,8 @@ nav ul li {
     font-weight: bold;
 }
 
-#left{
-    float:left;
+#left {
+    float: left;
     margin-left: 35px;
 }
 
@@ -87,16 +85,29 @@ nav ul li {
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
 }
 
-.disabled{
+#datepicker,
+#hours,
+#people,
+#summary,
+#map {
+    -webkit-transition: all 0.6s ease;
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+
+.disabled {
     opacity: 0.5;
     filter: alpha(opacity=50);
     pointer-events: none;
 }
+
+
 /*===============================================================
     2. MAP
 ===============================================================*/
 
-#map{
+#map {
     background: url('../img/map.png') no-repeat top;
     background-size: contain;
     width: 560px;
@@ -104,123 +115,147 @@ nav ul li {
     display: block;
     position: relative;
     margin: 0;
-    
 }
 
-#map li{
+#map li {
     position: absolute;
-    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #FFFFFF;
+    font-weight: bold;
+    font-size: 1.1em;
 }
 
-#map li.shape1{
+#map li.shape1 {
     height: 26px;
     width: 26.5px;
 }
 
-#map li.shape2{
+#map li.shape2 {
     height: 26px;
     width: 33px;
 }
 
-#map li.shape3{
+#map li.shape3 {
     height: 36px;
     width: 48px;
+    font-size: 1.3em;
 }
 
-#map li.shape4{
+#map li.shape4 {
     height: 30px;
     width: 28px;
 }
 
-#map li.shape5{
+#map li.shape5 {
     height: 46px;
     width: 29px;
 }
 
-#map li.shape6{
+#map li.shape6 {
     height: 40px;
     width: 48px;
+    font-size: 1.3em;
 }
 
-#map li#table1{
+#map li#table1 {
     left: 500.5px;
     top: 146.5px;
 }
 
-#map li#table2{
+#map li#table2 {
     left: 500.5px;
     top: 192px;
 }
 
-#map li#table3{
+#map li#table3 {
     left: 432px;
     top: 221px;
 }
 
-#map li#table4{
+#map li#table4 {
     left: 432px;
     top: 146px;
 }
 
-#map li#table5{
+#map li#table5 {
     left: 248.5px;
     top: 236.5px;
 }
 
-#map li#table6{
+#map li#table6 {
     left: 250px;
     top: 175.5px;
 }
 
-#map li#table7{
+#map li#table7 {
     left: 207.5px;
     top: 236.5px;
 }
 
-#map li#table8{
+#map li#table8 {
     left: 218px;
     top: 175.5px;
 }
 
-#map li#table9{
+#map li#table9 {
     left: 166.5px;
     top: 236.5px;
 }
 
-#map li#table10{
+#map li#table10 {
     left: 185.5px;
     top: 175.5px;
 }
 
-#map li#table11{
-    left: 92px;
+#map li#table11 {
+    left: 92.5px;
     top: 223px;
 }
 
-#map li#table12{
-    left: 92px;
+#map li#table12 {
+    left: 92.5px;
     top: 145px;
 }
 
-#map li#table13{
-    left: 33px;
+#map li#table13 {
+    left: 33.5px;
     top: 216.5px;
 }
 
-#map li#table14{
-    left: 33px;
+#map li#table14 {
+    left: 33.5px;
     top: 145px;
 }
 
-.reserved{
-    background: black;
+.reserved {
+    background: #CD4A5E;
     pointer-events: none;
 }
 
-.free{
+.free {
+    background: #C8C7C7;
+    /*opacity: 0.5;*/
+}
+
+.available {
     background: #5ECD4A;
+}
+
+.available:hover {
+    background: #4A5ECD;
     cursor: pointer;
 }
+
+.multipleHover {
+    background: #4A5ECD;
+}
+
+.selected {
+    background: #4A5ECD;
+}
+
 /*===============================================================
     3. CALENDAR
 ===============================================================*/
@@ -230,140 +265,163 @@ nav ul li {
     height: auto;
     margin: 20px 23px 0 27px;
     background: white;
-    float:left;
+    float: left;
     font: 9pt Arial, sans-serif;
     box-sizing: border-box;
     transform: scale(1.1);
 }
 
 .ui-datepicker a {
-	text-decoration: none;
+    text-decoration: none;
 }
 
 .ui-datepicker table {
-	width: 100%;
+    width: 100%;
 }
+
 .ui-datepicker-header {
-	background: #241E20;
-	color: #e0e0e0;
-	font-weight: bold;
-	-webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
-	-moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
-	box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
-	text-shadow: 1px -1px 0px #000;
-	filter: dropshadow(color=#000, offx=1, offy=-1);
-	line-height: 30px;
-	border-width: 1px 0 0 0;
-	border-style: solid;
-	border-color: #111;
+    background: #241E20;
+    color: #e0e0e0;
+    font-weight: bold;
+    -webkit-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, 2);
+    -moz-box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+    box-shadow: inset 0px 1px 1px 0px rgba(250, 250, 250, .2);
+    text-shadow: 1px -1px 0px #000;
+    filter: dropshadow(color=#000, offx=1, offy=-1);
+    line-height: 30px;
+    border-width: 1px 0 0 0;
+    border-style: solid;
+    border-color: #111;
 }
+
 .ui-datepicker-title {
-	text-align: center;
+    text-align: center;
 }
-.ui-datepicker-prev, .ui-datepicker-next {
-	display: inline-block;
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	cursor: pointer;
-	background-image: url('../img/arrow.png');
-	background-repeat: no-repeat;
-	line-height: 600%;
-	overflow: hidden;
-}
-.ui-datepicker-prev {
-	float: left;
-	background-position: center -30px;
-}
+
+.ui-datepicker-prev,
 .ui-datepicker-next {
-	float: right;
-	background-position: center 0px;
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    cursor: pointer;
+    background-image: url('../img/arrow.png');
+    background-repeat: no-repeat;
+    line-height: 600%;
+    overflow: hidden;
 }
+
+.ui-datepicker-prev {
+    float: left;
+    background-position: center -30px;
+}
+
+.ui-datepicker-next {
+    float: right;
+    background-position: center 0px;
+}
+
 .ui-datepicker thead {
-	background-color: #f7f7f7;
-	background-image: -moz-linear-gradient(top,  #f7f7f7 0%, #f1f1f1 100%);
-	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#f7f7f7), color-stop(100%,#f1f1f1));
-	background-image: -webkit-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-	background-image: -o-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-	background-image: -ms-linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-	background-image: linear-gradient(top,  #f7f7f7 0%,#f1f1f1 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1',GradientType=0 );
-	border-bottom: 1px solid #bbb;
+    background-color: #f7f7f7;
+    background-image: -moz-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #f7f7f7), color-stop(100%, #f1f1f1));
+    background-image: -webkit-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+    background-image: -o-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+    background-image: -ms-linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+    background-image: linear-gradient(top, #f7f7f7 0%, #f1f1f1 100%);
+    filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#f7f7f7', endColorstr='#f1f1f1', GradientType=0);
+    border-bottom: 1px solid #bbb;
 }
+
 .ui-datepicker th {
-	text-transform: uppercase;
-	font-size: 6pt;
-	padding: 5px 0;
-	color: #241E20;
-	text-shadow: 1px 0px 0px #fff;
-	filter: dropshadow(color=#fff, offx=1, offy=0);
+    text-transform: uppercase;
+    font-size: 6pt;
+    padding: 5px 0;
+    color: #241E20;
+    text-shadow: 1px 0px 0px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=0);
 }
+
 .ui-datepicker tbody td {
-	padding: 0;
-	border-right: 1px solid #bbb;
+    padding: 0;
+    border-right: 1px solid #bbb;
 }
+
 .ui-datepicker tbody td:last-child {
-	border-right: 0px;
+    border-right: 0px;
 }
+
 .ui-datepicker tbody tr {
-	border-bottom: 1px solid #bbb;
+    border-bottom: 1px solid #bbb;
 }
+
 .ui-datepicker tbody tr:last-child {
-	border-bottom: 0px;
+    border-bottom: 0px;
 }
-.ui-datepicker td span, .ui-datepicker td a {
-	display: inline-block;
-	font-weight: bold;
-	text-align: center;
-	width: 30px;
-	height: 30px;
-	line-height: 30px;
-	color: #241E20;
-	text-shadow: 1px 1px 0px #fff;
-	filter: dropshadow(color=#fff, offx=1, offy=1);
+
+.ui-datepicker td span,
+.ui-datepicker td a {
+    display: inline-block;
+    font-weight: bold;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    color: #241E20;
+    text-shadow: 1px 1px 0px #fff;
+    filter: dropshadow(color=#fff, offx=1, offy=1);
 }
+
 .ui-datepicker-calendar .ui-state-default {
-	background: #ededed;
-	-webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
-	-moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
-	box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+    background: #ededed;
+    -webkit-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+    -moz-box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
+    box-shadow: inset 1px 1px 0px 0px rgba(250, 250, 250, .5);
 }
+
 .ui-datepicker-calendar .ui-state-hover {
-	background: #f7f7f7;
+    background: #f7f7f7;
 }
+
 .ui-datepicker-calendar .ui-state-active {
-	background: #5ecd4a;
-	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-	color: #e0e0e0;
-	text-shadow: 0px 1px 0px #939495;
-	filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
-	border: 1px solid #241E20;
-	position: relative;
-	margin: -1px;
+    background: #5ecd4a;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    color: #e0e0e0;
+    text-shadow: 0px 1px 0px #939495;
+    filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
+    border: 1px solid #241E20;
+    position: relative;
+    margin: -1px;
 }
+
 .ui-datepicker-unselectable .ui-state-default {
-	background: #f4f4f4;
-	color: #b4b3b3;
+    background: #f4f4f4;
+    color: #b4b3b3;
 }
+
 .ui-datepicker-calendar td:first-child .ui-state-active {
-	width: 29px;
-	margin-left: 0;
+    width: 29px;
+    margin-left: 0;
 }
+
 .ui-datepicker-calendar td:last-child .ui-state-active {
-	width: 29px;
-	margin-right: 0;
+    width: 29px;
+    margin-right: 0;
 }
+
 .ui-datepicker-calendar tr:last-child .ui-state-active {
-	height: 29px;
-	margin-bottom: 0;
+    height: 29px;
+    margin-bottom: 0;
 }
+
+
 /*===============================================================
     4. NUMBER OF PEOPLE
 ===============================================================*/
 
-#people{
+#people {
     float: left;
     margin: 10px 0 0 20px;
     padding: 30px 20px 20px 20px;
@@ -373,11 +431,18 @@ nav ul li {
     text-align: center;
 }
 
+#errNum {
+    height: 10px;
+    color: darkred;
+    font-size: 0.8em;
+}
+
+
 /*===============================================================
     5. HOURS
 ===============================================================*/
 
-.date{
+.date {
     width: 136px;
     height: 26px;
     display: block;
@@ -387,7 +452,7 @@ nav ul li {
     border-bottom: 1px solid #CACCCE;
 }
 
-#hours{
+#hours {
     float: left;
     margin: 9px 0 0 20px;
     background-color: #FFFFFF;
@@ -395,7 +460,7 @@ nav ul li {
     height: auto;
 }
 
-#hours ul{
+#hours ul {
     width: 150px;
     text-align: center;
     display: block;
@@ -403,37 +468,38 @@ nav ul li {
     padding: 0px;
 }
 
-#hours ul li{
+#hours ul li {
     line-height: 25px;
     display: block;
     border-top: 1px solid #CACCCE;
     border-bottom: 1px solid #CACCCE
 }
 
-#hours ul li a{
+#hours ul li a {
     display: block;
     text-decoration: none;
     color: #000;
 }
 
-#hours ul li:hover{
+#hours ul li:hover {
     display: block;
     color: #FFFFFF;
     background: #5ECD4A;
-	-webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-	-moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
-	box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
     border-bottom: 1px solid #5ECD4A;
     border-top: 1px solid #5ECD4A;
-	text-shadow: 0px 1px 0px #939495;
-	filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
+    text-shadow: 0px 1px 0px #939495;
+    filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
 }
+
 
 /*===============================================================
     6. SUMMARY
 ===============================================================*/
 
-#summary{
+#summary {
     font-size: 13px;
     clear: both;
     margin-top: 260px;
@@ -443,16 +509,16 @@ nav ul li {
     height: 184px;
 }
 
-
 #summary dl {
     margin-top: -2px;
     padding: 10px;
     width: 245px;
     height: 166px;
-    float:left;
+    float: left;
 }
 
-#summary dt, dd {
+#summary dt,
+dd {
     margin: 0px;
     height: 14px;
     padding: 3px;
@@ -470,13 +536,13 @@ nav ul li {
 }
 
 #summary input[type=email],
-#summary input[type=phone]{
+#summary input[type=phone] {
     height: 11px;
     font-size: 12px;
     padding: 1px;
 }
 
-#summary input[type=submit]{
+#summary input[type=submit] {
     position: absolute;
     top: 733px;
     left: 343px;
@@ -488,9 +554,8 @@ nav ul li {
     -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
     -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .2);
-
 }
 
-#summary input[type=submit]:hover{
-    font-weight:  bold;
+#summary input[type=submit]:hover {
+    font-weight: bold;
 }

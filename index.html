@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="keywords" content="css, odcinek" />
@@ -7,8 +8,8 @@
 
     <title>Rezerwacja Cybermachina!</title>
 
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/style.css" />
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
@@ -17,27 +18,30 @@
 
 
 </head>
+
 <body>
-    <script>
-      window.fbAsyncInit = function() {
-        FB.init({
-          appId      : '1775355889449739',
-          xfbml      : true,
-          version    : 'v2.8'
-        });
+    <!--<script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId: '1775355889449739',
+                xfbml: true,
+                version: 'v2.8'
+            });
 
-        // ADD ADDITIONAL FACEBOOK CODE HERE
-      };
+            // ADD ADDITIONAL FACEBOOK CODE HERE
+        };
 
-      (function(d, s, id){
-         var js, fjs = d.getElementsByTagName(s)[0];
-         if (d.getElementById(id)) {return;}
-         js = d.createElement(s); js.id = id;
-         js.src = "//connect.facebook.net/en_US/sdk.js";
-         fjs.parentNode.insertBefore(js, fjs);
-       }(document, 'script', 'facebook-jssdk'));
-        
-    </script>
+        (function(d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) {
+                return;
+            }
+            js = d.createElement(s);
+            js.id = id;
+            js.src = "//connect.facebook.net/en_US/sdk.js";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script> -->
 
     <nav>
         <ul>
@@ -48,87 +52,116 @@
             <li><b>&#10004 </b>Potwierdzenie</li>
         </ul>
     </nav>
-    <div id= "left">
-        <div id= "map">
+    <div id="left">
+        <div id="map">
             <ul>
-                <li class = 'shape4' id = 'table1'><a href="#"></a><li>
-                <li class = 'shape4' id = 'table2'><a href="#"></a></li>
-                <li class = 'shape6' id = 'table3'><a href="#"></a></li>
-                <li class = 'shape6' id = 'table4'><a href="#"></a></li>
-                <li class = 'shape2' id = 'table5'><a href="#"></a></li>
-                <li class = 'shape1' id = 'table6'><a href="#"></a></li>
-                <li class = 'shape2' id = 'table7'><a href="#"></a></li>
-                <li class = 'shape1' id = 'table8'><a href="#"></a></li>
-                <li class = 'shape2' id = 'table9'><a href="#"></a></li>
-                <li class = 'shape1' id = 'table10'><a href="#"></a></li>
-                <li class = 'shape6' id = 'table11'><a href="#"></a></li>
-                <li class = 'shape3' id = 'table12'><a href="#"></a></li>
-                <li class = 'shape5' id = 'table13'><a href="#"></a></li>
-                <li class = 'shape5' id = 'table14'><a href="#"></a></li>
+                <li class='shape4' id='table1'>1
+                    <a href="#"></a>
+                </li>
+                <li class='shape4' id='table2'>2
+                    <a href="#"></a>
+                </li>
+                <li class='shape6' id='table3'>3
+                    <a href="#"></a>
+                </li>
+                <li class='shape6' id='table4'>4
+                    <a href="#"></a>
+                </li>
+                <li class='shape2' id='table5'>5
+                    <a href="#"></a>
+                </li>
+                <li class='shape1' id='table6'>6
+                    <a href="#"></a>
+                </li>
+                <li class='shape2' id='table7'>7
+                    <a href="#"></a>
+                </li>
+                <li class='shape1' id='table8'>8
+                    <a href="#"></a>
+                </li>
+                <li class='shape2' id='table9'>9
+                    <a href="#"></a>
+                </li>
+                <li class='shape1' id='table10'>10
+                    <a href="#"></a>
+                </li>
+                <li class='shape6' id='table11'>11
+                    <a href="#"></a>
+                </li>
+                <li class='shape3' id='table12'>12
+                    <a href="#"></a>
+                </li>
+                <li class='shape5' id='table13'>13
+                    <a href="#"></a>
+                </li>
+                <li class='shape5' id='table14'>14
+                    <a href="#"></a>
+                </li>
             </ul>
         </div>
-        <div id= "datepicker"></div>
-        <div id= "people">
+        <div id="datepicker"></div>
+        <div id="people">
             <form>
                 Podaj liczbę osób:
                 <br><br>
-                <input type="number" id="numP" min=2 max=18>
+                <input type="number" id="numP" min=2 max=20>
             </form>
-            <br><br>
-            Jeśli chcesz zrobić rezerwację na ponad 18 osób skontaktuj się z nami telefonicznie lub poprzez e-mail.
+            <p id="errNum"></p>
+            <p>Jeśli chcesz zrobić rezerwację na ponad 20 osób skontaktuj się z nami telefonicznie lub poprzez e-mail.</p>
         </div>
-        <form method="post" action="" id= "summary">
+        <form method="post" action="" id="summary">
             <dl>
                 <dt>Liczba osób:</dt>
-                <dd class = sum1></dd>
+                <dd class=sum1></dd>
                 <dt>Numer stolika:</dt>
-                <dd class = sum2></dd>
+                <dd class=sum2></dd>
                 <dt>Godzina:</dt>
-                <dd class = sum3></dd>
+                <dd class=sum3></dd>
                 <dt>Data:</dt>
-                <dd class = sum4></dd>
+                <dd class=sum4></dd>
             </dl>
             <dl>
                 <dt>Imię:</dt>
-                <dd class = sum5>Justyna Skalska</dd>
+                <dd class=sum5>Justyna Skalska</dd>
                 <dt>E-mail:</dt>
-                <dd class = sum6><input type="email" name="email" id="email" /></dd>
+                <dd class=sum6><input type="email" name="email" id="email" /></dd>
                 <dt>Numer telefonu:</dt>
-                <dd class = sum7><input type="phone" name="phone" id="phone" /></dd>
+                <dd class=sum7><input type="phone" name="phone" id="phone" /></dd>
             </dl>
             <input type="submit" id="reservation" value="Rezerwuję!" />
         </form>
     </div>
-        <div id= "hours">
-            <span class= 'date'></span>
-            <ul>
-                <li class='hour-1200'><a href='#'>12:00</a></li>
-                <li class='hour-1230'><a href='#'>12:30</a></li>
-                <li class='hour-1300'><a href='#'>13:00</a></li>
-                <li class='hour-1330'><a href='#'>13:30</a></li>
-                <li class='hour-1400'><a href='#'>14:00</a></li>
-                <li class='hour-1430'><a href='#'>14:30</a></li>
-                <li class='hour-1500'><a href='#'>15:00</a></li>
-                <li class='hour-1530'><a href='#'>15:30</a></li>
-                <li class='hour-1600'><a href='#'>16:00</a></li>
-                <li class='hour-1630'><a href='#'>16:30</a></li>
-                <li class='hour-1700'><a href='#'>17:00</a></li>
-                <li class='hour-1730'><a href='#'>17:30</a></li>
-                <li class='hour-1800'><a href='#'>18:00</a></li>
-                <li class='hour-1830'><a href='#'>18:30</a></li>
-                <li class='hour-1900'><a href='#'>19:00</a></li>
-                <li class='hour-1930'><a href='#'>19:30</a></li>
-                <li class='hour-2000'><a href='#'>20:00</a></li>
-                <li class='hour-2030'><a href='#'>20:30</a></li>
-                <li class='hour-2100'><a href='#'>21:00</a></li>
-                <li class='hour-2130'><a href='#'>21:30</a></li>
-                <li class='hour-2200'><a href='#'>22:00</a></li>
-                <li class='hour-2230'><a href='#'>22:30</a></li>
-                <li class='hour-2300'><a href='#'>23:00</a></li>
-                <li class='hour-2330'><a href='#'>23:30</a></li>
-                <li class='hour-2400'><a href='#'>24:00</a></li>
-            </ul>
+    <div id="hours">
+        <span class='date'></span>
+        <ul>
+            <li class='hour-1200'><a href='#'>12:00</a></li>
+            <li class='hour-1230'><a href='#'>12:30</a></li>
+            <li class='hour-1300'><a href='#'>13:00</a></li>
+            <li class='hour-1330'><a href='#'>13:30</a></li>
+            <li class='hour-1400'><a href='#'>14:00</a></li>
+            <li class='hour-1430'><a href='#'>14:30</a></li>
+            <li class='hour-1500'><a href='#'>15:00</a></li>
+            <li class='hour-1530'><a href='#'>15:30</a></li>
+            <li class='hour-1600'><a href='#'>16:00</a></li>
+            <li class='hour-1630'><a href='#'>16:30</a></li>
+            <li class='hour-1700'><a href='#'>17:00</a></li>
+            <li class='hour-1730'><a href='#'>17:30</a></li>
+            <li class='hour-1800'><a href='#'>18:00</a></li>
+            <li class='hour-1830'><a href='#'>18:30</a></li>
+            <li class='hour-1900'><a href='#'>19:00</a></li>
+            <li class='hour-1930'><a href='#'>19:30</a></li>
+            <li class='hour-2000'><a href='#'>20:00</a></li>
+            <li class='hour-2030'><a href='#'>20:30</a></li>
+            <li class='hour-2100'><a href='#'>21:00</a></li>
+            <li class='hour-2130'><a href='#'>21:30</a></li>
+            <li class='hour-2200'><a href='#'>22:00</a></li>
+            <li class='hour-2230'><a href='#'>22:30</a></li>
+            <li class='hour-2300'><a href='#'>23:00</a></li>
+            <li class='hour-2330'><a href='#'>23:30</a></li>
+            <li class='hour-2400'><a href='#'>24:00</a></li>
+        </ul>
     </div>
 
 </body>
+
 </html>
