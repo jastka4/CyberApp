@@ -8,6 +8,8 @@
 
     <title>Rezerwacja Cybermachina!</title>
 
+    <!--<base href="/">-->
+
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/style.css" />
 
@@ -16,10 +18,9 @@
 
     <script src="js/main.js"></script>
 
-
 </head>
 
-<body>
+<body>                                          <!-- TODO: show reservation id after submiting -->
     <!--<script>
         window.fbAsyncInit = function() {
             FB.init({
@@ -29,6 +30,12 @@
             });
 
             // ADD ADDITIONAL FACEBOOK CODE HERE
+
+            FB.api('/me', function(response) {
+            alert('Your name is ' + response.name);
+            reservation[5] = response.name;
+            $(".sum5").html(reservation[5]);
+});
         };
 
         (function(d, s, id) {
@@ -43,13 +50,13 @@
         }(document, 'script', 'facebook-jssdk'));
     </script> -->
 
-    <nav>
+    <nav>                   <!-- TODO: navigation bar changes when selection is made -->
         <ul>
-            <li><b>&#10004 </b>Data<i></i></li>
-            <li><b>&#10004 </b>Liczba osób<i></i></li>
-            <li><b>&#10004 </b>Stolik<i></i></li>
-            <li><b>&#10004 </b>Godziny rezerwacji<i></i></li>
-            <li><b>&#10004 </b>Potwierdzenie</li>
+            <li><b>&#10004; </b>Data<i></i></li>
+            <li><b>&#10004; </b>Liczba osób<i></i></li>
+            <li><b>&#10004; </b>Stolik<i></i></li>
+            <li><b>&#10004; </b>Godziny rezerwacji<i></i></li>
+            <li><b>&#10004; </b>Potwierdzenie</li>
         </ul>
     </nav>
     <div id="left">
@@ -109,7 +116,7 @@
             <p id="errNum"></p>
             <p>Jeśli chcesz zrobić rezerwację na ponad 20 osób skontaktuj się z nami telefonicznie lub poprzez e-mail.</p>
         </div>
-        <form method="post" action="" id="summary">
+        <form method="post" action="" id="summary"> <!-- add php file for the post method -->
             <dl>
                 <dt>Liczba osób:</dt>
                 <dd class=sum1></dd>
@@ -122,18 +129,18 @@
             </dl>
             <dl>
                 <dt>Imię:</dt>
-                <dd class=sum5>Justyna Skalska</dd>
+                <dd class=sum5></dd>
                 <dt>E-mail:</dt>
                 <dd class=sum6><input type="email" name="email" id="email" /></dd>
                 <dt>Numer telefonu:</dt>
                 <dd class=sum7><input type="phone" name="phone" id="phone" /></dd>
             </dl>
-            <input type="submit" id="reservation" value="Rezerwuję!" />
+            <input type="submit" id="reservation" value="Rezerwuję!" onsubmit="" /> <!-- add function that shows a modal -->
         </form>
     </div>
     <div id="hours">
         <span class='date'></span>
-        <ul>
+        <ul id='selectable'>
             <li class='hour-1200'><a href='#'>12:00</a></li>
             <li class='hour-1230'><a href='#'>12:30</a></li>
             <li class='hour-1300'><a href='#'>13:00</a></li>

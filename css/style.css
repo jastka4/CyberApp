@@ -30,6 +30,12 @@ body {
     color: #241E20;
     /* TEST
     padding-left: 500px;*/
+    -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+       -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+          -ms-user-select: none; /* Internet Explorer/Edge */
+              user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
 }
 
 nav {
@@ -229,30 +235,30 @@ nav ul li {
     top: 145px;
 }
 
-.reserved {
+#map .reserved {
     background: #CD4A5E;
     pointer-events: none;
 }
 
-.free {
+#map .free {
     background: #C8C7C7;
     /*opacity: 0.5;*/
 }
 
-.available {
+#map .available {
     background: #5ECD4A;
 }
 
-.available:hover {
+#map .available:hover {
     background: #4A5ECD;
     cursor: pointer;
 }
 
-.multipleHover {
+#map .multipleHover {
     background: #4A5ECD;
 }
 
-.selected {
+#map .selected {
     background: #4A5ECD;
 }
 
@@ -477,13 +483,12 @@ nav ul li {
 
 #hours ul li a {
     display: block;
+    color:inherit;
     text-decoration: none;
-    color: #000;
 }
 
-#hours ul li:hover {
-    display: block;
-    color: #FFFFFF;
+#selectable .ui-selected {
+    /*color: #FFFFFF;*/
     background: #5ECD4A;
     -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
     -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
@@ -494,6 +499,29 @@ nav ul li {
     filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
 }
 
+#hours ul li:not(.booked):hover,
+#selectable .ui-selecting {
+    background: #86DA77;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    border-bottom: 1px solid #86DA77;
+    border-top: 1px solid #86DA77;
+    text-shadow: 0px 1px 0px #939495;
+    filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
+}
+
+#hours .booked {
+    color: #000000;
+    background:#CD4A5E;
+    -webkit-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    -moz-box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, .1);
+    border-bottom: 1px solid #CD4A5E;
+    border-top: 1px solid #CD4A5E;
+    text-shadow: 0px 1px 0px #939495;
+    filter: dropshadow(color=#FFFFFF, offx=0, offy=1);
+}
 
 /*===============================================================
     6. SUMMARY
