@@ -18,8 +18,7 @@ for(let i = 0; i < 14; i++) {
 }
 
 $(function () {                  //TODO:
-    var reservation = [];        //delete this, beacuse we use post method
-        //reserved = [];         //fix multiple hover (selecting both doesn't work)
+                                 //add logic for handling hours in multiple tables reservationDetails and adding tables to the summary
                                  //message on submit
                                  //post - data will be re-submitted (the browser should alert the user that the data are about to be re-submitted)
                                  //https://stackoverflow.com/questions/4295782/how-do-you-extract-post-data-in-node-js
@@ -47,8 +46,6 @@ $(function () {                  //TODO:
             var selected = $(this).val();
             $(".date, .sum4").html(showDayName(selected));
             $('#people').removeClass('disabled');
-            reservation[1] = selected; //change it to get day, month, year
-            
             $("#numP").val("");
             $('#map, #hours, #summary').addClass('disabled');
             $(".sum1").html("");
@@ -80,9 +77,9 @@ $(function () {                  //TODO:
         var numPeopleElement = document.getElementById("numP"),
             numPeople = Number(numPeopleElement.value);
             resetHours();
+            $("#hours").addClass("disabled");
             resetTables();
         if (numPeople >= 2 && numPeople <= 20) {
-            reservation[3] = parseInt(numPeople);
             $(".sum1").html(numPeople);
             $('#map').removeClass('disabled');
             showAvailableTables(numPeople);
@@ -105,10 +102,11 @@ $(function () {                  //TODO:
 
     for (let i = 0; i < tableList.length; i++) {
         tableList[i].addEventListener("click", function() {
+            console.log(this);
             resetHours();
-            markSelectedTable(tableList[i]);
-            if(tableList[i].classList.contains("selected"))
-                getReservedHours(i);
+            markSelectedTable(this);
+            if(this.classList.contains("selected"))
+                getReservedHours($(this).index());
         }, false);
     }
 
@@ -249,6 +247,20 @@ $(function () {                  //TODO:
         }
     }
 
+    function multipleSelection() {
+        let multi = document.getElementsByClassName("multipleHover");
+        for(let i = 0; i < multi.length; i++) {
+            multi[i].classList.add("selected");
+        }
+    }
+
+    function multipleDeselection() {
+        let multi = document.getElementsByClassName("multipleHover");
+        for(let i = 0; i < multi.length; i++) {
+            multi[i].classList.remove("selected");
+        }
+    }
+
     function disableMultipleHover(table) {
         for (let i = 0; i < table.length; i++) {
             $(table[i]).off("mouseenter mouseleave");
@@ -274,20 +286,22 @@ $(function () {                  //TODO:
         if (table.classList.contains("available")) {
             if (table.classList.contains("selected")) {
                 table.classList.remove("selected");
-                $('#hours').addClass('disabled');
+                multipleDeselection();
+                $('#hours, #summary').addClass('disabled');
                 $(".sum2").html("");
             } else {
                 if (checkSelection(siblings)) {
                     for (let i = 0; i < siblings.length; i++) {
                         siblings[i].classList.remove("selected");
                         table.classList.add("selected");
+                        multipleSelection();
                     }
                 } else {
                     table.classList.add("selected");
                     $('#hours').removeClass('disabled');
+                    multipleSelection();
                 }
-                reservation[4] = parseInt(table.innerText);
-                $(".sum2").html(reservation[4]);
+                $(".sum2").html(parseInt(table.innerText)); //TODO: fix for multiple tables
             }
         }
     }
@@ -351,6 +365,7 @@ $(function () {                  //TODO:
                 }
             }
             if (ui.unselecting.classList.contains("selected-flag")) {
+                $('#summary').addClass('disabled');
                 ui.unselecting.classList.remove("ui-selected", "selected-flag");            //deselect
             }
         },
@@ -359,7 +374,7 @@ $(function () {                  //TODO:
                 allHours = document.querySelectorAll(".selected-flag"),
                 endHour = allHours[allHours.length-1].textContent;
             if(startHour === endHour){
-                $(".sum3").html(startHour);
+                $(".sum3").html(startHour); //TODO: must select a period of time
             } else {
                 $(".sum3").html(startHour + " - " + endHour);
             }
@@ -370,10 +385,10 @@ $(function () {                  //TODO:
     /*===============================================================
     HOURS
     ===============================================================*/
-    var $hours = $("#selectable").children();
 
     function resetHours(){
-        for (var i = 0; i < $hours.length; i++) {
+        var $hours = $("#selectable").children();
+        for (let i = 0; i < $hours.length; i++) {
             if($hours[i].classList.contains("booked")) {
                 $hours[i].classList.remove("booked");
             }
@@ -383,6 +398,7 @@ $(function () {                  //TODO:
     }
 
     function getReservedHours(table){
+        console.log(table);
         for(let i = 0; i < reserved[table].hours.length; i++) {
             //console.log("table " + table + " " + reserved[table].hours[i].startHour + "-" + reserved[table].hours[i].endHour);
             showReservedHours(reserved[table].hours[i].startHour, reserved[table].hours[i].endHour);
@@ -390,8 +406,9 @@ $(function () {                  //TODO:
     }
 
     function showReservedHours (start, end) {
+        var $hours = $("#selectable").children();
         var arr = $hours.filter(function(hour){
-            var cl = (this.classList)[0].split('-');
+        var cl = (this.classList)[0].split('-');
             return parseInt(cl[1]) >= parseInt(start) && parseInt(cl[1]) <= parseInt(end);
         })
 
@@ -399,18 +416,5 @@ $(function () {                  //TODO:
             arr[i].classList.remove("unbooked");
             arr[i].classList.add("booked");
         }
-    }
-    /*===============================================================
-    SEND RESERVATION INFO
-    ===============================================================*/
-    function loadReserved(day) {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("GET", "getReservation.php?q="+day, true); //add server file
-        xmlhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                //what to do with the response
-            }
-        }
-        xmlhttp.send();
     }
 }); //end of the ready function

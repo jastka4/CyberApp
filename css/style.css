@@ -269,7 +269,7 @@ nav ul li {
 #datepicker {
     width: 216px;
     height: auto;
-    margin: 20px 23px 0 27px;
+    margin: 20px 23px 23px 27px;
     background: white;
     float: left;
     font: 9pt Arial, sans-serif;
@@ -460,7 +460,7 @@ nav ul li {
 
 #hours {
     float: left;
-    margin: 9px 0 0 20px;
+    margin: 24px 0 0 20px;
     background-color: #FFFFFF;
     width: 150px;
     height: auto;
@@ -528,6 +528,7 @@ nav ul li {
 ===============================================================*/
 
 #summary {
+    position: relative;
     font-size: 13px;
     clear: both;
     margin-top: 260px;
@@ -565,15 +566,14 @@ dd {
 
 #summary input[type=email],
 #summary input[type=phone] {
-    height: 11px;
+    height: 12px;
     font-size: 12px;
-    padding: 1px;
 }
 
 #summary input[type=submit] {
     position: absolute;
-    top: 733px;
-    left: 343px;
+    bottom: 15px;
+    left: 293px;
     width: 120px;
     height: 25px;
     border: 1px solid #CACCCE;
@@ -586,4 +586,9 @@ dd {
 
 #summary input[type=submit]:hover {
     font-weight: bold;
+}
+
+#summary .invalid {
+    border-color: #900;
+    background-color: #FDD;
 }
