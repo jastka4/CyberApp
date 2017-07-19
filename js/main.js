@@ -417,4 +417,39 @@ $(function () {                  //TODO:
             arr[i].classList.add("booked");
         }
     }
+/*===============================================================
+    SERVER
+===============================================================*/
+    var email = document.getElementById('email'),
+        phone = document.getElementById('phone');    
+    
+    document.addEventListener('submit', function(event) {
+        event.preventDefault();
+        if(email.validity.valid && phone.validity.valid){
+            var reservationDetails = new Object({
+                "fullName": $(".sum5").text(),
+                "phone":$("#phone").val(),
+                "email":$("#email").val(),
+                "date": $(".sum4").text(),
+                "startHour": $(".sum3").text().split("-")[0],
+                "endHour": $(".sum3").text().split("-")[1],
+                "table": $(".sum2").text()
+            });
+
+            $.ajax({
+                type: 'post',
+                url: 'reserve.php',
+                data: JSON.stringify(reservationDetails),
+                contentType: "application/json; charset=utf-8",
+                traditional: true,
+                success: function(data) {
+                    console.log("SUCCESS : ", data);
+                },
+                error: function(e) {
+                    console.log("ERROR : ", e);
+                } 
+            });
+        }
+        return false;
+    },false);
 }); //end of the ready function
