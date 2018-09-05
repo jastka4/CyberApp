@@ -1,0 +1,13 @@
+
+# HTID:402573: DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES BELOW
+php_value display_errors 1
+# DO NOT REMOVE OR MODIFY THIS LINE AND THE LINES ABOVE HTID:402573:
+
+# Turn rewrite engine on
+Options +FollowSymlinks
+RewriteEngine on
+
+# map neat URL to internal URL
+# RewriteRule ^posts/today$ /posts/%{TIME_YEAR}-%{TIME_MON}-%{TIME_DAY}
+RewriteRule ^table/list/([12]\d{3}-(0[1-9]|1[0-2])-(0[1-9]|[12]\d|3[01]))/$   server/RestController.php?view=all&date=$1 [nc,qsa]
+RewriteRule ^table/list/([0-9][0-4]?)/$   server/RestController.php?view=single&id=$1 [nc,qsa]
